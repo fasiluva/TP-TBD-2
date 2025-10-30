@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS tp2_database;
+
+USE tp2_database;
+
+DROP TABLE IF EXISTS Autor;
+DROP TABLE IF EXISTS Libro;
+
+CREATE TABLE Autor (
+	id INT NOT NULL AUTO_INCREMENT,
+	nombre VARCHAR(30) NOT NULL,
+	apellido VARCHAR(30) NOT NULL,
+	nacionalidad VARCHAR(30) NOT NULL,
+	residencia VARCHAR(30) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE Libro (
+	isbn INT NOT NULL,
+	titulo VARCHAR(40) NOT NULL,
+	editorial VARCHAR(30) NOT NULL,
+	precio FLOAT NOT NULL,
+	PRIMARY KEY (isbn)
+);
+
+CREATE TABLE Escribe (
+	id INT NOT NULL,
+	isbn INT NOT NULL,
+	año INT NOT NULL,
+	PRIMARY KEY (id, isbn),
+	FOREIGN KEY (id) REFERENCES Autor(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (isbn) REFERENCES Libro(isbn) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE INDEX titulo_idx ON Libro(titulo);
+CREATE INDEX apellido_idx ON Autor(apellido);
