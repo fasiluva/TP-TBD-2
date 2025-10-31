@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS biblioteca_db;
 
 USE biblioteca_db;
 
+DROP TABLE IF EXISTS Escribe;
 DROP TABLE IF EXISTS Autor;
 DROP TABLE IF EXISTS Libro;
 
