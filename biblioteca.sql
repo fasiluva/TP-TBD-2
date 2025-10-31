@@ -55,18 +55,16 @@ VALUES  (1, 1001, 1945),
 UPDATE Autor SET residencia = "Buenos Aires" WHERE nombre = "Abelardo" AND apellido = "Castillo";
 
 /*Ejercicio 4b)*/
-UPDATE Libro SET precio = precio * 1.1 WHERE editorial = "UNR"
+UPDATE Libro SET precio = precio * 1.1 WHERE editorial = "UNR";
 
 
 /*Ejercicio 4c)*/
-UPDATE Libro SET precio = TT.precio 
-WHERE Libro.isbn = 
-((SELECT DISTINCT * 
-FROM
-(UPDATE (SELECT * FROM Libro WHERE residencia <> "Argentina" AND precio < 200) SET precio = precio * 1.2),
-UPDATE (SELECT * FROM Libro WHERE residencia <> "Argentina" AND precio>=200) SET precio = precio * 1.1
-) AS TT).isbn
+UPDATE Libro SET precio = CASE
+	WHEN precio <= 200 THEN precio*1.2 ELSE precio*1.1
+END
+WHERE Libro.isbn IN (SELECT DISTINCT Escribe.isbn FROM Escribe WHERE Escribe.id IN (SELECT Autor.id FROM Autor WHERE nacionalidad = "Argentina"));
+
 
 /*Ejercicio 4d)*/
 DELETE FROM Libro 
-WHERE Libro.isbn = (SELECT isbn FROM Escribe WHERE anio = "1998").isbn
+WHERE Libro.isbn IN (SELECT isbn FROM Escribe WHERE anio = "1998");
