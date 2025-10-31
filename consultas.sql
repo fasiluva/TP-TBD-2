@@ -1,15 +1,7 @@
 /*
-5. Considere la base de datos de la empresa inmobiliaria. Dar soluciones en SQL a las siguientes consultas
-y mostrar los resultados obtenidos. Para ésto utilizar el archivo inmobiliaria.sql, script de generación
-de la base de datos.
-a) Obtener los nombres de los dueños de los inmuebles.
-b) Obtener todos los códigos de los inmuebles cuyo precio está en el intervalo 600.000 a 700.000
-    inclusive.
-c) Obtener los nombres de los clientes que prefieran inmuebles sólo en la zona Norte de Santa Fe.
-d) Obtener los nombres de los empleados que atiendan a algún cliente que prefiera la zona Centro
-    de Rosario.
-e) Para cada zona de Rosario, obtener el número de inmuebles en venta y el promedio de su valor.
-f) Obtener los nombres de los clientes que prefieran inmuebles en todas las zonas de Santa Fe.
+Valentin Sosa, S-5621/9.
+Santiago Bussanich, B-6488/2.
+Ángelo Alvarez, A-4429/6.
 */
 
 /*

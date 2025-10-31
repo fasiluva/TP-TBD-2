@@ -1,3 +1,9 @@
+/*
+Valentin Sosa, S-5621/9.
+Santiago Bussanich, B-6488/2.
+Ángelo Alvarez, A-4429/6.
+*/
+
 CREATE DATABASE IF NOT EXISTS biblioteca_db;
 
 USE biblioteca_db;
