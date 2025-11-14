@@ -11,7 +11,7 @@ Santiago Bussanich, B-6488/2.
 SELECT P.`nombre` 
 FROM Persona as P
 WHERE EXISTS (
-    SELECT 1 
+    SELECT 1    
     FROM Propietario as PP
     WHERE P.`codigo` = PP.`codigo` AND EXISTS (
         SELECT 1 
